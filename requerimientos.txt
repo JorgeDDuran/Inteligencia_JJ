@@ -1,0 +1,6 @@
+Bibliotecas
+
+opencv-python
+numpy
+Pillow
+PyQt5

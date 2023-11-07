@@ -1,0 +1,34 @@
+Usuario: cristian, ContraseÃ±a: admin
+Usuario: sergio, Contraseï¿½a: 13574
+Usuario: andress, Contraseï¿½a: 12435
+Usuario: jorge, ContraseÃ±a: david
+Usuario: santiago, Contraseï¿½a: 4875
+Usuario: carlos, Contraseï¿½a: 2314
+Usuario: adrian, Contraseï¿½a: 09876
+Usuario: jorge, Contraseï¿½a: 08769
+Usuario: fabian, Contraseï¿½a: 08769256
+Usuario: brandon, Contraseï¿½a: 246537
+Usuario: mateo, Contraseï¿½a: 46875
+Usuario: mateo, Contraseï¿½a: 46875
+Usuario: mateo, Contraseï¿½a: 46875
+Usuario: aa, Contraseï¿½a: 222
+Usuario: bb, Contraseï¿½a: 222
+Usuario: Cristian , ContraseÃ±a: admin
+Usuario: Cristian 2, ContraseÃ±a: admin1
+Usuario: Adrian Patroclo , Contraseï¿½a: patrolo123
+Usuario: Adrian Patroclo , Contraseï¿½a: patrolo123
+Usuario: Adrian Patroclo , Contraseï¿½a: patrolo123
+
+Usuario: aaaa, Contraseña: aaaa
+Usuario: aaaa, Contraseña: aaaa
+Usuario: Jorge, Contraseña: aaaa
+Usuario: sergiooolix, Contraseña: 2804030sE
+Usuario: sergioo, Contraseña: 12233
+Usuario: Sergio Ortiz, Contraseña: 123456
+Usuario: Jorge Duran, Contraseña: aaaa
+Usuario: Jorge Duran, Contraseña: aaaa
+Usuario: Jorge, Contraseña: aaaa
+Usuario: jorge, Contraseña: aaaa, Rol: Funcionario
+Usuario: David, Contraseña: aaaa, Rol: Funcionario
+Usuario: David, Contraseña: aaaa, Rol: Funcionario
+Usuario: juan Pablo, Contraseña: 12345, Rol: Cliente

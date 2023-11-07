@@ -1,0 +1,14 @@
+Usuario: cristian, Ruta de la imagen: captured_images/user_image.jpg
+Usuario: cristian, Ruta de la imagen: captured_images/user_image.jpg
+Usuario: cristian 1 , Ruta de la imagen: captured_images/user_image.jpg
+Usuario: cr, Ruta de la imagen: captured_images/user_image.jpg
+Usuario: cr, Ruta de la imagen: captured_images/user_image.jpg
+Usuario: sergio, Ruta de la imagen: captured_images/user_image.jpg
+Usuario: andress, Ruta de la imagen: captured_images/user_image.jpg
+Usuario: jorge, Ruta de la imagen: captured_images/user_image.jpg
+Usuario: jorge, Ruta de la imagen: captured_images/imagen1.jpg
+Usuario: fabian, Ruta de la imagen: captured_images/imagen1.jpg
+Usuario: brandon, Ruta de la imagen: captured_images/imagen1.jpg
+Usuario: mateo, Ruta de la imagen: captured_images/imagen<class 'model.user_model.User'>.jpg
+Usuario: mateo, Ruta de la imagen: captured_images/imagen<class 'model.user_model.User'>.jpg
+Usuario: mateo, Ruta de la imagen: captured_images/imagen<class 'model.user_model.User'>.jpg
