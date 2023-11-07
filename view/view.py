@@ -18,7 +18,7 @@ class RegistrationApp(QMainWindow):
         self.init_ui()
 
     def init_ui(self):
-        self.setWindowTitle("Registro y Autenticación con Reconocimiento Facial")
+        self.setWindowTitle("Reconocimiento Facial")
         self.setGeometry(100, 100, 600, 400)
 
     # Configura el fondo azul utilizando una hoja de estilo
@@ -52,65 +52,34 @@ class RegistrationApp(QMainWindow):
         layout = QVBoxLayout()
 
     # Widgets para el registro
-        username_label = QLabel("Nombre de Usuario")
+        username_label = QLabel("Nombre Completo")
         self.username_input = QLineEdit()
-        password_label = QLabel("Contraseña")
-        self.password_input = QLineEdit()
-        self.password_input.setEchoMode(QLineEdit.Password)
+        edad_label = QLabel("Edad")
+        self.edad_input = QLineEdit()
+        
+        
 
         register_button = QPushButton("Registrar")
         register_button.clicked.connect(self.register_user)
 
-    # Crear un QLabel para la imagen
-        image_label = QLabel(self)
-        pixmap = QPixmap('view/img/Granada.jpg')  # Asegúrate de tener la imagen en la ubicación correcta
-        pixmap = pixmap.scaled(100, 120, Qt.KeepAspectRatio)  # Redimensionar la imagen
-        image_label.setPixmap(pixmap)
 
-    # Crear un layout horizontal para la imagen
-        image_layout = QVBoxLayout()
-        image_layout.addStretch(1)  # Espacio en blanco a la izquierda de la imagen
-        image_layout.addWidget(image_label)  # Agregar la imagen
-        image_layout.addStretch(1)  # Espacio en blanco a la derecha de la imagen
 
     # Agregar elementos de registro al layout
         layout.addWidget(username_label)
         layout.addWidget(self.username_input)
-        layout.addWidget(password_label)
-        layout.addWidget(self.password_input)
+        layout.addWidget(edad_label)
+        layout.addWidget(self.edad_input)
         
         
-        role_label = QLabel("Rol")
-        self.role_combo = QComboBox()
-        self.role_combo.addItem("Cliente")
-        self.role_combo.addItem("Funcionario")
-        self.role_combo.addItem("Trabajador")
-        role_layout = QVBoxLayout()
-        role_layout.addWidget(role_label)
-        role_layout.addWidget(self.role_combo)
-        layout.addLayout(role_layout)
-        layout.addWidget(register_button)
         
         
-        layout.addWidget(role_label)
-        layout.addWidget(self.role_combo)
 
-    # Agregar layout de imagen y elementos de autenticación al layout principal
-        layout.addLayout(image_layout)
 
-    # Widgets para la autenticación
-        auth_username_label = QLabel("Nombre de Usuario")
-        self.auth_username_input = QLineEdit()
-        auth_password_label = QLabel("Contraseña")
-        self.auth_password_input = QLineEdit()
-        self.auth_password_input.setEchoMode(QLineEdit.Password)
+    
         authenticate_button = QPushButton("Ingresar")
         authenticate_button.clicked.connect(self.authenticate_user)
 
-        layout.addWidget(auth_username_label)
-        layout.addWidget(self.auth_username_input)
-        layout.addWidget(auth_password_label)
-        layout.addWidget(self.auth_password_input)
+        
         layout.addWidget(authenticate_button)
 
     # Botón "Entrenar Modelo"
@@ -122,7 +91,7 @@ class RegistrationApp(QMainWindow):
 
         
     def train_model(self):
-        data_path = 'C:/Users/jddur/OneDrive/Desktop/FOTOS RECON'  # Ruta de tus datos de entrenamiento
+        data_path = '/fotosreconocimiento'  # Ruta de tus datos de entrenamiento
         model_path = 'modeloLBPHFace.xml'  # Ruta donde se guardará el modelo entrenado
 
     # Llama a la función de entrenamiento desde model.training
@@ -167,7 +136,7 @@ class RegistrationApp(QMainWindow):
 
     def capture_and_save_facial_image(self, username):
         personName = username
-        dataPath = 'C:/Users/jddur/OneDrive/Desktop/FOTOS RECON' 
+        dataPath = '/fotosreconocimiento' 
         personPath = dataPath + '/' + personName
 
         if not os.path.exists(personPath):
@@ -215,7 +184,7 @@ class RegistrationApp(QMainWindow):
         username = self.auth_username_input.text()
         password = self.auth_password_input.text()
         
-        dataPath = 'C:/Users/jddur/OneDrive/Desktop/FOTOS RECON'
+        dataPath = '/fotosreconocimiento'
         imagePaths = os.listdir(dataPath)
         print('imagePaths=',imagePaths)
         cap = cv2.VideoCapture(0,cv2.CAP_DSHOW)

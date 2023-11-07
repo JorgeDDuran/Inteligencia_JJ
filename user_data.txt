@@ -32,3 +32,7 @@ Usuario: jorge, Contraseña: aaaa, Rol: Funcionario
 Usuario: David, Contraseña: aaaa, Rol: Funcionario
 Usuario: David, Contraseña: aaaa, Rol: Funcionario
 Usuario: juan Pablo, Contraseña: 12345, Rol: Cliente
+Usuario: Jorge, Contraseña: aaaa, Rol: Cliente
+Usuario: Jorge, Contraseña: aaaa, Rol: Cliente
+Usuario: david, Contraseña: aaaa, Rol: Cliente
+Usuario: David, Contraseña: aaaa, Rol: Cliente

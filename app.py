@@ -7,7 +7,7 @@ def main():
     app = QApplication(sys.argv)
     window = RegistrationApp()
     window.show()
-    train_model('C:/Users/jddur/OneDrive/Desktop/FOTOS RECON', 'modeloLBPHFace.xml')  # Llama a train_model
+    train_model("/fotosreconocimiento", 'modeloLBPHFace.xml')  # Llama a train_model
     sys.exit(app.exec_())
 
 
