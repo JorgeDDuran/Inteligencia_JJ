@@ -51,6 +51,24 @@ class RegistrationApp(QMainWindow):
 
         layout = QVBoxLayout()
 
+
+        # Crear un QLabel para la imagen
+        image_label = QLabel(self)
+        pixmap = QPixmap('view/img/840_560.jpg')  # Asegúrate de tener la imagen en la ubicación correcta
+        pixmap = pixmap.scaled(150, 150, Qt.KeepAspectRatio)  # Redimensionar la imagen
+        image_label.setPixmap(pixmap)
+
+        # Crear un layout vertical para la imagen
+        image_layout = QVBoxLayout()
+        image_layout.addStretch(1)  # Espacio en blanco en la parte superior de la imagen
+        image_layout.addWidget(image_label)  # Agregar la imagen
+        image_layout.addStretch(1)  # Espacio en blanco en la parte inferior de la imagen
+
+        # Agregar layout de imagen al layout principal
+        layout.addLayout(image_layout)
+
+    
+        
     # Widgets para el registro
         username_label = QLabel("Nombre Completo")
         self.username_input = QLineEdit()
@@ -66,7 +84,7 @@ class RegistrationApp(QMainWindow):
         register_button = QPushButton("Registrar")
         register_button.clicked.connect(self.register_user)
 
-
+    
 
     # Agregar elementos de registro al layout
         layout.addWidget(username_label)
@@ -80,9 +98,6 @@ class RegistrationApp(QMainWindow):
         
         
         
-        
-
-
     
         authenticate_button = QPushButton("Ingresar")
         authenticate_button.clicked.connect(self.authenticate_user)
