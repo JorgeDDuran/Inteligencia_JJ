@@ -5,34 +5,34 @@ from services.reconocimiento_facial import capture_facial_image, compare_facial_
 # Lista para almacenar los registros de reconocimiento
 recognition_logs = []
 
-def register_user(username, password):
+def register_user(username, edad, sanguinidad, doc):
     # Validar la información del usuario (por ejemplo, verificar si el usuario ya existe)
     
     # Crear una instancia de la clase User con los datos proporcionados
-    user = User(username, password)
+    user = User(username, edad, sanguinidad, doc)
     
     # Definir la ruta del archivo donde se guardarán los datos de usuario
     user_data_file = "user_data.txt"
     
     # Guardar los datos del usuario en el archivo
     with open(user_data_file, "a") as file:
-        file.write(f"Usuario: {user.username}, Contraseña: {user.password}\n")
+        file.write(f"Nombre Completo: {username}, Edad: {edad}, Tipo de sangre: {sanguinidad}, Documento: {doc}\n")
 
-def authenticate_user(username, password):
+def authenticate_user(username, edad, sanguinidad, doc):
     # Define la ruta del archivo donde se almacenan los datos de usuario
     user_data_file = "user_data.txt"
     
     # Verifica si el usuario y la contraseña coinciden con los datos almacenados
     with open(user_data_file, "r") as file:
         for line in file:
-            if f"Usuario: {username}, Contraseña: {password}" in line:
+            if f"Nombre Completo: {username}, Edad: {edad}, Tipo de sangre: {sanguinidad}, Documento: {doc}" in line:
                 return True  # Usuario autenticado
 
     return False  # Usuario no autenticado
 
-def register_user_with_facial_recognition(username, password):
+def register_user_with_facial_recognition(username, edad, sanguinidad, doc):
     # Valida y guarda la información del usuario en una estructura de datos o archivo
-    user = User(username, password)
+    user = User(username, edad, sanguinidad, doc)
     # Realiza el registro del usuario (almacenamiento en la base de datos o archivo)
 
     # Captura la imagen facial

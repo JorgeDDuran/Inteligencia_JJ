@@ -56,6 +56,10 @@ class RegistrationApp(QMainWindow):
         self.username_input = QLineEdit()
         edad_label = QLabel("Edad")
         self.edad_input = QLineEdit()
+        sanguinidad_label = QLabel("Tipo de sangre")
+        self.sanguinidad_input = QLineEdit()
+        doc_label = QLabel("Documento")
+        self.doc_input = QLineEdit()
         
         
 
@@ -69,6 +73,10 @@ class RegistrationApp(QMainWindow):
         layout.addWidget(self.username_input)
         layout.addWidget(edad_label)
         layout.addWidget(self.edad_input)
+        layout.addWidget(sanguinidad_label)
+        layout.addWidget(self.sanguinidad_input)
+        layout.addWidget(doc_label)
+        layout.addWidget(self.doc_input)
         
         
         
@@ -79,7 +87,7 @@ class RegistrationApp(QMainWindow):
         authenticate_button = QPushButton("Ingresar")
         authenticate_button.clicked.connect(self.authenticate_user)
 
-        
+        layout.addWidget(register_button)
         layout.addWidget(authenticate_button)
 
     # Botón "Entrenar Modelo"
@@ -91,7 +99,7 @@ class RegistrationApp(QMainWindow):
 
         
     def train_model(self):
-        data_path = '/fotosreconocimiento'  # Ruta de tus datos de entrenamiento
+        data_path = 'fotosreconocimiento'  # Ruta de tus datos de entrenamiento
         model_path = 'modeloLBPHFace.xml'  # Ruta donde se guardará el modelo entrenado
 
     # Llama a la función de entrenamiento desde model.training
@@ -115,28 +123,30 @@ class RegistrationApp(QMainWindow):
 
     def register_user(self):
         username = self.username_input.text()
-        password = self.password_input.text()
-        role = self.role_combo.currentText()  
+        edad = self.edad_input.text()
+        sanguinidad = self.sanguinidad_input.text()
+        doc = self.doc_input.text()
+        
+       
 
-        if not username or not password:
-            return  # Validación de entrada
-
-        user = User(username, password, role)  # Pasa el rol como tercer argumento
+        user = User(username, edad, sanguinidad, doc)  # Pasa el rol como tercer argumento
         self.save_user_data(user)
         self.capture_and_save_facial_image(username)
 
     def save_user_data(self, user):
         username = user.username
-        password = user.password
-        role = user.role  # Obtén el rol del objeto User
+        edad = user.edad
+        sanguinidad = user.sanguinidad
+        doc = user.doc
+        
         user_data_file = "user_data.txt"
 
         with open(user_data_file, "a") as file:
-            file.write(f"Usuario: {username}, Contraseña: {password}, Rol: {role}\n")
+            file.write(f"Nombre Completo: {username}, Edad: {edad}, Tipo de sangre: {sanguinidad}, Documento: {doc}\n")
 
     def capture_and_save_facial_image(self, username):
         personName = username
-        dataPath = '/fotosreconocimiento' 
+        dataPath = 'fotosreconocimiento' 
         personPath = dataPath + '/' + personName
 
         if not os.path.exists(personPath):
@@ -161,7 +171,7 @@ class RegistrationApp(QMainWindow):
                 cv2.rectangle(frame, (x,y),(x+w,y+h),(0,255,0),2)
                 rostro = auxFrame[y:y+h,x:x+w]
                 rostro = cv2.resize(rostro,(150,150),interpolation=cv2.INTER_CUBIC)
-                cv2.imwrite(personPath + '/rotro_{}.jpg'.format(count),rostro)
+                cv2.imwrite(personPath + '/rostro_{}.jpg'.format(count),rostro)
                 count = count + 1
             cv2.imshow('frame',frame)
 
@@ -181,10 +191,9 @@ class RegistrationApp(QMainWindow):
             file.write(f"Usuario: {username}, Ruta de la imagen: {image_path}\n")
 
     def authenticate_user(self):
-        username = self.auth_username_input.text()
-        password = self.auth_password_input.text()
         
-        dataPath = '/fotosreconocimiento'
+        
+        dataPath = 'fotosreconocimiento'
         imagePaths = os.listdir(dataPath)
         print('imagePaths=',imagePaths)
         cap = cv2.VideoCapture(0,cv2.CAP_DSHOW)
