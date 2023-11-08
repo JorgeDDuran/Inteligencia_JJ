@@ -39,3 +39,5 @@ Usuario: David, Contraseña: aaaa, Rol: Cliente
 Nombre Completo: Jorge David Duran Gerena, Edad: 22, Tipo de sangre: o+, Documento: 1019603372
 Nombre Completo: , Edad: , Tipo de sangre: , Documento: 
 Nombre Completo: Jorge David Duran Gerena, Edad: 22, Tipo de sangre: o+, Documento: 1019603372
+Nombre Completo: Cristian, Edad: 24, Tipo de sangre: A+, Documento: 123456
+Nombre Completo: cristo, Edad: 19, Tipo de sangre: ab-, Documento: 098765
