@@ -131,7 +131,8 @@ class RegistrationApp(QMainWindow):
 
         user = User(username, edad, sanguinidad, doc)  # Pasa el rol como tercer argumento
         self.save_user_data(user)
-        self.capture_and_save_facial_image(username)
+        self.capture_and_save_facial_image(username,edad,sanguinidad,doc)
+
 
     def save_user_data(self, user):
         username = user.username
@@ -144,8 +145,8 @@ class RegistrationApp(QMainWindow):
         with open(user_data_file, "a") as file:
             file.write(f"Nombre Completo: {username}, Edad: {edad}, Tipo de sangre: {sanguinidad}, Documento: {doc}\n")
 
-    def capture_and_save_facial_image(self, username):
-        personName = username
+    def capture_and_save_facial_image(self, username, edad,sanguinidad, doc):
+        personName = username +" , " + edad + "," + sanguinidad + ","+ doc
         dataPath = 'fotosreconocimiento' 
         personPath = dataPath + '/' + personName
 
